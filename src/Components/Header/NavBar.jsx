@@ -8,8 +8,8 @@ const NavBar = () => {
         <div>
             <Navbar fluid rounded>
       <Navbar.Brand href="https://flowbite-react.com">
-        <img src="https://i.ibb.co/DbM1DyM/Soul-fit-connect-logo-removebg-preview.png" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Soul Fit Connect</span>
+        <img src="https://i.ibb.co/cXFNP7Z/Soul-Fit-Connect-horizontal-logo-removebg-preview.png" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
+        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white italic">Soul Fit Connect</span>
       </Navbar.Brand>
       <div className="flex md:order-2 items-center gap-4 font-semibold">
         <h1 className='text-lg'>Dashboard</h1>
@@ -38,7 +38,7 @@ const NavBar = () => {
         <li className='navLinks'><NavLink to='services'>Services</NavLink></li>
         <li className='navLinks'><NavLink to='about'>About</NavLink></li>
         <li className='navLinks'><NavLink to='contact'>Contact</NavLink></li>
-        <li className='navLinks'><NavLink to='login'>Login</NavLink></li>
+        <li className='navLinks'><NavLink to='/login'>Login</NavLink></li>
        </ul>
       </div>
     </Navbar>

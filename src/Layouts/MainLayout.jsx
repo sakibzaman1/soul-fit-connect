@@ -5,7 +5,7 @@ import FooTer from '../Components/Footer/Footer';
 
 const MainLayout = () => {
     return (
-        <div className='font-josefinSans'>
+        <div className='font-josefinSans max-w-7xl'>
             <section>
             <NavBar></NavBar>
             </section>
