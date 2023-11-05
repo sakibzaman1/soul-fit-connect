@@ -1,14 +1,14 @@
 import React from "react";
 import Header from "../../Components/Header/Header";
 import Marquee from "react-fast-marquee";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, NavLink, useLoaderData } from "react-router-dom";
 import Video from "../../Components/ExtraSections/Video";
 import SingleService from "../../Components/Services/SingleService";
 
 const Home = () => {
 
   const services = useLoaderData();
-  const {serviceName, serviceImage, price, proName, proImage, proEmail, description} = services;
+  
 
   return (
     <div>
@@ -55,9 +55,16 @@ const Home = () => {
             services.map(service=> <SingleService key={service.id} service={service}></SingleService>)
           }
           </div>
+          <div className="my-14 bg-teal-600 p-2 text-white w-56 flex justify-center mx-auto">
+            <NavLink to="/services">
+              <button>Show All Services</button>
+            </NavLink>
+          </div>
         </div>
       </div>
+      <hr className="" />
       <div>
+        <h1 className="text-4xl font-kalam my-10">Explore</h1>
         <Header></Header>
       </div>
     </div>

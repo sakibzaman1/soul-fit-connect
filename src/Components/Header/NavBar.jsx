@@ -53,7 +53,7 @@ const NavBar = () => {
       <div>
        <ul  className='text-lg gap-14 flex'>
         <li className='navLinks'><NavLink to='/'>Home</NavLink></li>
-        <li className='navLinks'><NavLink to='services'>Services</NavLink></li>
+        <li className='navLinks'><NavLink to='/services'>Services</NavLink></li>
         <li className='navLinks'><NavLink to='about'>About</NavLink></li>
         <li className='navLinks'><NavLink to='contact'>Contact</NavLink></li>
         <li className='navLinks'><NavLink to='registration'>{user? 'Register New' : 'Register'}</NavLink></li>

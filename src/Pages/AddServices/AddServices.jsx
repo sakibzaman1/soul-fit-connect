@@ -93,3 +93,10 @@ const AddServices = () => {
 };
 
 export default AddServices;
+
+/*
+https://i.ibb.co/zf0dSFr/personal-training.jpg
+https://i.ibb.co/Q8mXJ97/workout-plans.jpg
+https://i.ibb.co/zSQyysB/Group-Fitness-Classes.jpg
+https://i.ibb.co/WpZ8d68/Nutritional-Guidance.jpg
+*/

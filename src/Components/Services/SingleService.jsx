@@ -14,8 +14,13 @@ const SingleService = ({service}) => {
     </a>
     <div classNameName="px-5 pb-5">
         <a href="#">
-            <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white mb-6">{serviceName}</h5>
+            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">{serviceName}</h5>
         </a>
+        <div>
+            <p className='mb-10'>
+                {description}
+            </p>
+        </div>
         <div className="flex items-center justify-center space-x-10 mb-6">
             <h1 className='text-lg font-semibold font-kalam'>Service Provider ~ </h1>
                     <div className="">
