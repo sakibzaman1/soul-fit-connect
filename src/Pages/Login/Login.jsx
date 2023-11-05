@@ -48,7 +48,7 @@ const Login = () => {
         swal({
           position: "top-center",
           icon: "success",
-          title: "Successfully Signed In",
+          title: "Successfully Logged In",
           showConfirmButton: false,
           showCancelButton: false,
           timer: 2000,

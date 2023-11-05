@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Avatar, Dropdown, Navbar } from 'flowbite-react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './navbar.css'
 import { AuthContext } from '../../Providers/AuthProvider';
 import defaultUser from '../../assets/Images/defaultUser.png'
@@ -21,7 +21,7 @@ const NavBar = () => {
 
     return (
         <div>
-            <Navbar fluid rounded>
+            <Navbar className='bg-slate-200' fluid rounded>
       <Navbar.Brand href="https://flowbite-react.com">
         <img src="https://i.ibb.co/cXFNP7Z/Soul-Fit-Connect-horizontal-logo-removebg-preview.png" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white italic font-kalam">Soul Fit Connect</span>
@@ -43,10 +43,10 @@ const NavBar = () => {
             {user?  <span className="block truncate text-sm font-medium">{user.email}</span> : ''}
           </Dropdown.Header>
           {user? <Dropdown.Item>My Services</Dropdown.Item> : ''}
-          {user? <Dropdown.Item>Add Services</Dropdown.Item> : ''}
+          {user? <Dropdown.Item><Link to="/addservices">Add Services</Link></Dropdown.Item> : ''}
           {user? <Dropdown.Item>My Schedules</Dropdown.Item> : ''}
           <Dropdown.Divider />
-          {user? <Dropdown.Item onClick={handleLogOut}>Sign out</Dropdown.Item> : ''}
+          {user? <Dropdown.Item onClick={handleLogOut}>Logout</Dropdown.Item> : ''}
         </Dropdown>
         <Navbar.Toggle />
       </div>
@@ -56,6 +56,7 @@ const NavBar = () => {
         <li className='navLinks'><NavLink to='services'>Services</NavLink></li>
         <li className='navLinks'><NavLink to='about'>About</NavLink></li>
         <li className='navLinks'><NavLink to='contact'>Contact</NavLink></li>
+        <li className='navLinks'><NavLink to='registration'>{user? 'Register New' : 'Register'}</NavLink></li>
        </ul>
       </div>
     </Navbar>
