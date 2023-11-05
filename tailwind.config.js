@@ -8,7 +8,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        josefinSans: "'Josefin Sans', sans-serif"
+        josefinSans: "'Josefin Sans', sans-serif",
+        kalam: "'Kalam', cursive"
       }
     },
   },
