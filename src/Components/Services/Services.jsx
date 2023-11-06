@@ -7,6 +7,7 @@ const Services = () => {
   const services = useLoaderData();
   const [searchValue, setSearchValue] = useState("");
   const [searchClicked, setSearchClicked] = useState(false);
+  const [showMore, setShowMore] = useState(false);
   const filteredServices = services.filter(filteredService=> filteredService.serviceName.toLowerCase().includes(searchValue.toLowerCase()));
   console.log(filteredServices)
 
@@ -41,9 +42,27 @@ const Services = () => {
         {
           searchClicked? filteredServices.map((service) => (
             <SingleService key={service.id} service={service}></SingleService>
-          )) : services.map((service) => (
-            <SingleService key={service.id} service={service}></SingleService>
-          ))
+          )) : 
+          
+          (
+            services.length>0 && showMore? 
+            services.map((service) => (
+              <SingleService key={service.id} service={service}></SingleService>
+  
+              
+            )) :
+            services.slice(0,2).map((service) => (
+              <SingleService key={service.id} service={service}></SingleService>
+  
+              
+            ))
+
+          )
+        }
+      </div>
+      <div>
+        {
+          services.length > 2 && <button className="bg-gradient-to-r from-teal-500 to-teal-700 w-28 rounded-sm text-white p-2 overflow-hidden hover:scale-105 transition-transform transform origin-center mt-10 block mx-auto" onClick={()=> setShowMore(!showMore)}>{showMore? "See Less" : "See All"}</button>
         }
       </div>
     </div>

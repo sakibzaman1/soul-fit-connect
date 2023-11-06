@@ -187,7 +187,7 @@ const Registration = () => {
             <small className="font-medium text-black">
               Already Have an Account? Please
               <Link to="/login" className="text-green-900 ml-2 font-bold">
-                <button>Login</button>
+                <button onClick={goToTop}>Login</button>
               </Link>
             </small>
           </div>

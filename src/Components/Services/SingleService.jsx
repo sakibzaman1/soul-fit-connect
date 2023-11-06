@@ -1,7 +1,12 @@
 import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const SingleService = ({ service }) => {
+
+  const {goToTop} = useContext(AuthContext);
+
   const {
     _id,
     serviceName,
@@ -112,6 +117,7 @@ const SingleService = ({ service }) => {
               <span className="text-red-600">{price}</span>
             </span>
             <Link
+             onClick={goToTop}
               to={`/servicedetails/${_id}`}
               className="text-white bg-gradient-to-r from-teal-200 to-teal-700  hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-none text-sm px-5 py-2.5 text-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800"
             >

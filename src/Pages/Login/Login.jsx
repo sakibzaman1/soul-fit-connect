@@ -139,7 +139,7 @@ const Login = () => {
             <small className="font-medium text-black">
               New to this Website? Please
               <Link to="/registration" className="text-red-700 ml-1">
-                <button>Register</button>
+                <button onClick={goToTop}>Register</button>
               </Link>
             </small>
           </div>

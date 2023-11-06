@@ -4,8 +4,12 @@ import Marquee from "react-fast-marquee";
 import { Link, NavLink, useLoaderData } from "react-router-dom";
 import Video from "../../Components/ExtraSections/Video";
 import SingleService from "../../Components/Services/SingleService";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Home = () => {
+
+  const {goToTop} = useContext(AuthContext);
 
   const services = useLoaderData();
   
@@ -57,7 +61,7 @@ const Home = () => {
           </div>
           <div className="my-14 bg-teal-600 p-2 text-white w-56 flex justify-center mx-auto">
             <NavLink to="/services">
-              <button>Show All Services</button>
+              <button onClick={goToTop}>Show All Services</button>
             </NavLink>
           </div>
         </div>
