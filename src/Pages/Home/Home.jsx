@@ -52,7 +52,7 @@ const Home = () => {
           <h1 className="text-4xl font-kalam my-10">Our Services</h1>
           <div className="grid grid-cols-2 gap-6">
           {
-            services.map(service=> <SingleService key={service.id} service={service}></SingleService>)
+            services?.slice(0,4).map(service=> <SingleService key={service._id} service={service}></SingleService>)
           }
           </div>
           <div className="my-14 bg-teal-600 p-2 text-white w-56 flex justify-center mx-auto">

@@ -1,18 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import DropDown from "./DropDown";
 
-const SingleService = ({ service }) => {
+const MySchedulesCard = ({ myBooking }) => {
   const {
-    _id,
+    _id, 
     serviceName,
     serviceImage,
     price,
     serviceArea,
+    serviceDate,
     proName,
     proImage,
     proEmail,
     description,
-  } = service;
+  } = myBooking;
 
   return (
     <div>
@@ -37,9 +39,7 @@ const SingleService = ({ service }) => {
             <span>Service Area : {serviceArea}</span>
           </div>
           <div className="flex items-center justify-center space-x-10 mb-6">
-            <h1 className="text-lg font-semibold font-kalam">
-              Service Provider ~{" "}
-            </h1>
+           
             <div className="">
               <img
                 className="w-8 h-8 rounded-full"
@@ -55,8 +55,11 @@ const SingleService = ({ service }) => {
                 {proEmail}
               </p>
             </div>
+            <div>
+              <p>Date: {serviceDate}</p>
+            </div>
           </div>
-          <div className="flex items-center justify-center mt-2.5 mb-10">
+          <div className="flex items-center justify-center mt-2.5 mb-6">
             <svg
               className="w-4 h-4 text-yellow-300 mr-1"
               aria-hidden="true"
@@ -107,16 +110,11 @@ const SingleService = ({ service }) => {
             </span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-3xl font-bold text-gray-900 dark:text-white">
+            <span className="text-3xl font-bold text-gray-900 dark:text-white ">
               <span className="font-kalam">Price</span> : ${" "}
               <span className="text-red-600">{price}</span>
             </span>
-            <Link
-              to={`/servicedetails/${_id}`}
-              className="text-white bg-gradient-to-r from-teal-200 to-teal-700  hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-none text-sm px-5 py-2.5 text-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800"
-            >
-              View Details
-            </Link>
+            
           </div>
         </div>
       </div>
@@ -124,4 +122,4 @@ const SingleService = ({ service }) => {
   );
 };
 
-export default SingleService;
+export default MySchedulesCard;

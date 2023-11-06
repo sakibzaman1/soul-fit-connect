@@ -8,6 +8,8 @@ import '../Router/router.css'
 import AddServices from '../Pages/AddServices/AddServices';
 import Services from '../Components/Services/Services';
 import ServiceDetails from '../Components/Services/ServiceDetails';
+import MySchedules from '../Pages/MySchedules/MySchedules';
+import PrivateRoute from '../PrivateRoutes/PrivateRoute';
 
 const router = createBrowserRouter([
     {
@@ -34,12 +36,17 @@ const router = createBrowserRouter([
             },
             {
                 path: '/servicedetails/:id',
-                element: <ServiceDetails></ServiceDetails>,
+                element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
                 loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
                 path: '/addservices',
-                element: <AddServices></AddServices>
+                element: <PrivateRoute><AddServices></AddServices></PrivateRoute>
+            },
+            {
+                path: '/myschedules',
+                element: <PrivateRoute><MySchedules></MySchedules></PrivateRoute>,
+                loader: ()=> fetch(`http://localhost:5000/myschedules`)
             }
         ]
     }

@@ -11,10 +11,62 @@ const BookNow = ({ service }) => {
     proName,
     proImage,
     proEmail,
-    description,
   } = service;
   const { user } = useContext(AuthContext);
   const [modal, setModal] = useState(false);
+
+  const handleBooking = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const serviceName =form.serviceName.value;
+    const serviceImage =form.serviceImage.value;
+    const price =form.price.value;
+    const serviceArea =form.serviceArea.value;
+    const userEmail = user?.email;
+    const proImage =form.proImage.value;
+    const proEmail =form.proEmail.value;
+    const serviceDate = form.serviceDate.value;
+
+    console.log(serviceName,
+      serviceImage,
+      price,
+      serviceArea,
+      userEmail,
+      proImage,
+      proEmail,
+      serviceDate);
+
+      const myNewService = {serviceName,
+        serviceImage,
+        price,
+        serviceArea,
+        userEmail,
+        proImage,
+        proEmail,
+        serviceDate}
+
+      fetch('http://localhost:5000/myschedules', {
+            method: 'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(myNewService)
+        })
+        .then(res=> res.json())
+        .then(data=> {
+            console.log(data);
+            if(data.insertedId){
+                swal({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Service Added Successfully',
+                    showConfirmButton: false,
+                    showCancelButton: false,
+                    timer: 2000
+                });
+            }
+        })
+  };
 
   const toggleModal = () => {
     setModal(!modal);
@@ -30,7 +82,7 @@ const BookNow = ({ service }) => {
     <>
       <button
         onClick={toggleModal}
-        className="text-white bg-gradient-to-r from-teal-200 to-teal-700  hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-none text-sm px-5 py-2.5 text-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800 btn-modal"
+        className="text-white bg-gradient-to-r from-teal-200 to-teal-700  hover:bg-teal-950 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-none text-sm px-5 py-2.5 text-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800 btn-modal"
       >
         Book Now
       </button>
@@ -39,12 +91,14 @@ const BookNow = ({ service }) => {
         <div className="modal mt-16">
           <div onClick={toggleModal} className="overlay"></div>
           <div className="modal-content">
-          <h2 className="mb-8 text-xl font-bold text-gray-900 dark:text-white">Purchase a new service</h2>
-            <form>
+            <h2 className="mb-8 text-xl font-bold text-gray-900 dark:text-white">
+              Purchase a new service
+            </h2>
+            <form onSubmit={handleBooking}>
               <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
                 <div className="sm:col-span-2">
                   <label
-                    for="name"
+                    
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Service Name
@@ -55,13 +109,14 @@ const BookNow = ({ service }) => {
                     id="name"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="Type service name"
-                    defaultValue={serviceName} readOnly
+                    defaultValue={serviceName}
+                    readOnly
                     required=""
                   />
                 </div>
                 <div className="w-full">
                   <label
-                    for="brand"
+                    
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Service Image URL
@@ -79,7 +134,7 @@ const BookNow = ({ service }) => {
                 </div>
                 <div className="w-full">
                   <label
-                    for="price"
+                    
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Service Price
@@ -97,16 +152,16 @@ const BookNow = ({ service }) => {
                 </div>
                 <div>
                   <label
-                    for="category"
+                    
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
-                     User's Email
+                    User's Email
                   </label>
                   <input
                     defaultValue={user?.email}
                     readOnly
-                    type="text"
-                    name="proName"
+                    type="email"
+                    name="userEmail"
                     placeholder="Type Provider Name"
                     id="category"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
@@ -114,7 +169,7 @@ const BookNow = ({ service }) => {
                 </div>
                 <div>
                   <label
-                    for="item-weight"
+                    
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Provider's Email
@@ -132,7 +187,7 @@ const BookNow = ({ service }) => {
                 </div>
                 <div className="w-full">
                   <label
-                    for="brand"
+                    
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Provider's Image URL
@@ -141,7 +196,7 @@ const BookNow = ({ service }) => {
                     defaultValue={proImage}
                     readOnly
                     type="text"
-                    name="providerImage"
+                    name="proImage"
                     id=""
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="Providers image URL"
@@ -150,10 +205,10 @@ const BookNow = ({ service }) => {
                 </div>
                 <div className="w-full">
                   <label
-                    for="brand"
+                    
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
-                    Address
+                    Service Area
                   </label>
                   <input
                     type="text"
@@ -161,12 +216,13 @@ const BookNow = ({ service }) => {
                     id=""
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="Service Area"
+                    defaultValue={serviceArea}
                     required=""
                   />
                 </div>
                 <div className="sm:col-span-2">
                   <label
-                    for="brand"
+                    
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Service Taking date
@@ -183,7 +239,7 @@ const BookNow = ({ service }) => {
               </div>
               <button
                 type="submit"
-                className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-teal-600 p-4 bg-primary-700 rounded-none focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800"
+                className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-teal-600 p-4 bg-primary-700 rounded-none focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-teal-800"
               >
                 Purchase This Service
               </button>

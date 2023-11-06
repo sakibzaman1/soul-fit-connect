@@ -1,21 +1,26 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import DropDown from './DropDown';
 
-const SingleService = ({ service }) => {
-  const {
-    _id,
-    serviceName,
-    serviceImage,
-    price,
-    serviceArea,
-    proName,
-    proImage,
-    proEmail,
-    description,
-  } = service;
+const MyPendingCard = ({myPendingWork}) => {
 
-  return (
-    <div>
+    const {
+        _id,
+        serviceName,
+        serviceImage,
+        price,
+        serviceArea,
+        providerLocation,
+        proName,
+        proImage,
+        proEmail,
+        description,
+      } = myPendingWork;
+
+      console.log(_id)
+
+    return (
+        <div>
       <div className="w-full bg-slate-200 border border-gray-200 rounded-lg  dark:bg-gray-800 dark:border-gray-700 space-y-6 p-6 shadow-xl">
         <a href="#">
           <img
@@ -54,6 +59,9 @@ const SingleService = ({ service }) => {
               <p className="text-sm text-gray-500 truncate dark:text-gray-400">
                 {proEmail}
               </p>
+            </div>
+            <div>
+              <p>Location: {providerLocation}</p>
             </div>
           </div>
           <div className="flex items-center justify-center mt-2.5 mb-10">
@@ -111,17 +119,14 @@ const SingleService = ({ service }) => {
               <span className="font-kalam">Price</span> : ${" "}
               <span className="text-red-600">{price}</span>
             </span>
-            <Link
-              to={`/servicedetails/${_id}`}
-              className="text-white bg-gradient-to-r from-teal-200 to-teal-700  hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-none text-sm px-5 py-2.5 text-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800"
-            >
-              View Details
-            </Link>
+            <div>
+                <DropDown></DropDown>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  );
+    );
 };
 
-export default SingleService;
+export default MyPendingCard;

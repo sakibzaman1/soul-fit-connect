@@ -31,7 +31,7 @@ const ServiceDetails = () => {
             alt="product image"
           />
         </a>
-        <div classNameName="px-5 pb-5">
+        <div className="px-5 pb-5">
           <a href="#">
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">
               {serviceName}
