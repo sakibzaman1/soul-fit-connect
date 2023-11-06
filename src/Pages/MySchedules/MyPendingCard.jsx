@@ -1,26 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import DropDown from './DropDown';
+import React from "react";
+import { Link } from "react-router-dom";
+import DropDown from "./DropDown";
 
-const MyPendingCard = ({myPendingWork}) => {
+const MyPendingCard = ({ myPendingWork }) => {
+  const {
+    _id,
+    serviceName,
+    serviceImage,
+    price,
+    userEmail,
+    serviceArea,
+    proName,
+    proImage,
+    proEmail,
+    serviceDate,
+  } = myPendingWork;
 
-    const {
-        _id,
-        serviceName,
-        serviceImage,
-        price,
-        serviceArea,
-        providerLocation,
-        proName,
-        proImage,
-        proEmail,
-        description,
-      } = myPendingWork;
+  console.log(_id);
 
-      console.log(_id)
-
-    return (
-        <div>
+  return (
+    <div>
       <div className="w-full bg-slate-200 border border-gray-200 rounded-lg  dark:bg-gray-800 dark:border-gray-700 space-y-6 p-6 shadow-xl">
         <a href="#">
           <img
@@ -36,7 +35,7 @@ const MyPendingCard = ({myPendingWork}) => {
             </h5>
           </a>
           <div>
-            <p className="mb-10">{description}</p>
+            <h1>Booked By : <span className="text-teal-600">{userEmail}</span></h1>
           </div>
           <div className="my-6">
             <span>Service Area : {serviceArea}</span>
@@ -60,9 +59,9 @@ const MyPendingCard = ({myPendingWork}) => {
                 {proEmail}
               </p>
             </div>
-            <div>
-              <p>Location: {providerLocation}</p>
-            </div>
+          </div>
+          <div className="mb-6">
+            <p>Service Date: {serviceDate}</p>
           </div>
           <div className="flex items-center justify-center mt-2.5 mb-10">
             <svg
@@ -120,13 +119,13 @@ const MyPendingCard = ({myPendingWork}) => {
               <span className="text-red-600">{price}</span>
             </span>
             <div>
-                <DropDown></DropDown>
+              <DropDown></DropDown>
             </div>
           </div>
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default MyPendingCard;

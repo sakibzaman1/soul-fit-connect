@@ -13,8 +13,8 @@ const Home = () => {
   return (
     <div>
       <div className="relative mt-10">
-        <div className="mt-10 flex items-center h-10 absolute top-0 right-0 left-0 vertical-marquee">
-          <Marquee className="text-9xl mt-8 ml-6 text-white">
+        <div className="mt-10 flex items-center h-10 absolute top-20 right-6 left-0 vertical-marquee">
+          <Marquee className="text-[300px] mt-8 ml-6 text-white">
             <p className="pl-4 border-r-2">
               "Fitness is not about being better than someone else; it's about
               being better than you used to be." - Unknown

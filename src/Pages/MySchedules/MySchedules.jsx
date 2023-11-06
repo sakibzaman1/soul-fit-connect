@@ -27,7 +27,7 @@ const MySchedules = () => {
                     {
                         myBookings.map(myBooking=> <MySchedulesCard key={myBooking._id} myBooking={myBooking}></MySchedulesCard>)
                     }
-                </div> : <h1>Nothing Added Yet </h1>
+                </div> : <h1 className='text-2xl text-red-600'>Nothing Added Yet </h1>
 
                 }
             </section>

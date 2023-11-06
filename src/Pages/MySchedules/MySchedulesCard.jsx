@@ -4,7 +4,7 @@ import DropDown from "./DropDown";
 
 const MySchedulesCard = ({ myBooking }) => {
   const {
-    _id, 
+    _id,
     serviceName,
     serviceImage,
     price,
@@ -39,7 +39,9 @@ const MySchedulesCard = ({ myBooking }) => {
             <span>Service Area : {serviceArea}</span>
           </div>
           <div className="flex items-center justify-center space-x-10 mb-6">
-           
+            <h1 className="text-lg font-semibold font-kalam">
+              Service Provider ~{" "}
+            </h1>
             <div className="">
               <img
                 className="w-8 h-8 rounded-full"
@@ -55,10 +57,8 @@ const MySchedulesCard = ({ myBooking }) => {
                 {proEmail}
               </p>
             </div>
-            <div>
-              <p>Date: {serviceDate}</p>
-            </div>
           </div>
+          
           <div className="flex items-center justify-center mt-2.5 mb-6">
             <svg
               className="w-4 h-4 text-yellow-300 mr-1"
@@ -114,7 +114,9 @@ const MySchedulesCard = ({ myBooking }) => {
               <span className="font-kalam">Price</span> : ${" "}
               <span className="text-red-600">{price}</span>
             </span>
-            
+            <div>
+            <p>Service Date: {serviceDate}</p>
+          </div>
           </div>
         </div>
       </div>
