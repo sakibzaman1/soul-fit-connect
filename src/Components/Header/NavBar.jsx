@@ -44,6 +44,7 @@ const NavBar = () => {
           </Dropdown.Header>
           {user? <Dropdown.Item>My Services</Dropdown.Item> : ''}
           {user? <Dropdown.Item><Link to="/addservices">Add Services</Link></Dropdown.Item> : ''}
+          {user? <Dropdown.Item><Link to="/manageservice">Manage Service</Link></Dropdown.Item> : ''}
           {user? <Dropdown.Item><Link to="/myschedules">My Schedules</Link></Dropdown.Item> : ''}
           <Dropdown.Divider />
           {user? <Dropdown.Item onClick={handleLogOut}>Logout</Dropdown.Item> : ''}
