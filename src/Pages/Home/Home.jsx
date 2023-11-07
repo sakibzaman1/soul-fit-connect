@@ -6,6 +6,8 @@ import Video from "../../Components/ExtraSections/Video";
 import SingleService from "../../Components/Services/SingleService";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import AppDownload from "../../Components/ExtraSections/AppDownload";
+import Stats from "../../Components/ExtraSections/Stats";
 
 const Home = () => {
 
@@ -70,6 +72,14 @@ const Home = () => {
       <div>
         <h1 className="text-4xl font-kalam my-10">Explore</h1>
         <Header></Header>
+      </div>
+      <div>
+        <h1 className="text-4xl font-kalam my-20">More About Us</h1>
+        <Stats></Stats>
+      </div>
+      <div>
+        <h1 className="text-4xl font-kalam my-10">Connect Faster</h1>
+        <AppDownload></AppDownload>
       </div>
     </div>
   );

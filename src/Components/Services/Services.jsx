@@ -51,7 +51,7 @@ const Services = () => {
   
               
             )) :
-            services.slice(0,2).map((service) => (
+            services.slice(0,6).map((service) => (
               <SingleService key={service.id} service={service}></SingleService>
   
               
@@ -62,7 +62,7 @@ const Services = () => {
       </div>
       <div>
         {
-          services.length > 2 && <button className="bg-gradient-to-r from-teal-500 to-teal-700 w-28 rounded-sm text-white p-2 overflow-hidden hover:scale-105 transition-transform transform origin-center mt-10 block mx-auto" onClick={()=> setShowMore(!showMore)}>{showMore? "See Less" : "See All"}</button>
+          services.length > 6 && <button className="bg-gradient-to-r from-teal-500 to-teal-700 w-28 rounded-sm text-white p-2 overflow-hidden hover:scale-105 transition-transform transform origin-center mt-10 block mx-auto" onClick={()=> setShowMore(!showMore)}>{showMore? "See Less" : "See All"}</button>
         }
       </div>
     </div>
