@@ -1,10 +1,14 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../../Providers/AuthProvider';
-import { Link } from 'react-router-dom';
+import React, { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+import { Link } from "react-router-dom";
+import swal from "sweetalert";
 
-const ManageServiceCard = ({service}) => {
-
-    const {goToTop} = useContext(AuthContext);
+const ManageServiceCard = ({
+  service,
+  myCurrentServices,
+  setMyCurrentServices,
+}) => {
+  const { goToTop } = useContext(AuthContext);
 
   const {
     _id,
@@ -18,8 +22,26 @@ const ManageServiceCard = ({service}) => {
     description,
   } = service;
 
-    return (
-        <div>
+  const handleDeleteService = (_id) => {
+    // console.log(_id)
+    fetch(`http://localhost:5000/services/${_id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.deletedCount > 0) {
+          swal("Deleted!", "Your Service Has been deleted", "success");
+          const remainingServices = myCurrentServices.filter(
+            (prod) => prod._id !== _id
+          );
+          setMyCurrentServices(remainingServices);
+        }
+      });
+  };
+
+  return (
+    <div>
       <div className="w-full bg-slate-200 border border-gray-200 rounded-lg  dark:bg-gray-800 dark:border-gray-700 space-y-6 p-6 shadow-xl">
         <a href="#">
           <img
@@ -116,15 +138,14 @@ const ManageServiceCard = ({service}) => {
               <span className="text-red-600">{price}</span>
             </span>
             <Link
-             onClick={goToTop}
+              onClick={goToTop}
               to={`/updateservice/${_id}`}
               className="text-white w-24 bg-gradient-to-r from-teal-400 to-teal-700  hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-none text-sm px-5 py-2.5 text-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800"
             >
               Edit
             </Link>
             <Link
-             onClick={goToTop}
-              
+              onClick={() => handleDeleteService(_id)}
               className="text-white w-24 bg-gradient-to-r from-teal-400 to-teal-700  hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-none text-sm px-5 py-2.5 text-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800"
             >
               Delete
@@ -133,7 +154,7 @@ const ManageServiceCard = ({service}) => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default ManageServiceCard;
