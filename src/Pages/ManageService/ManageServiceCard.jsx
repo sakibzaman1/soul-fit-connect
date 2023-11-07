@@ -117,7 +117,7 @@ const ManageServiceCard = ({service}) => {
             </span>
             <Link
              onClick={goToTop}
-              
+              to={`/updateservice/${_id}`}
               className="text-white w-24 bg-gradient-to-r from-teal-400 to-teal-700  hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-none text-sm px-5 py-2.5 text-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800"
             >
               Edit
