@@ -1,8 +1,20 @@
-# React + Vite
+# Soul Fit Connect
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An offline service sharing web application for providing fitness guidelines to the people, sincere about their own health & fitness.
 
-Currently, two official plugins are available:
+## Live Site Link `Netlify` : [ Soul Fit Connect ](https://soul-fit-connect-sakib.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+***
+
+## Key Features
+
+- A visitor can explore the home page featuring Navbar, Banner, Services, Footer & Many more Sections.
+- The Navbar & Footer is a Shared Component, Navbar is dynamic with login and registration link as well as a dashboard dropdown.
+- To gain the access of many more features a visitor must be logged in.
+- Logged in user can add services as well as update/delete services as an admin.
+- User can see details of services and also book any service which will be shown on the my Schedules page.
+
+***
+
+#### This Project Has Been Done using `React` `FireBase` `ReactRouter` `MongoDB` etc.
+
