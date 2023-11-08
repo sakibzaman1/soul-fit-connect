@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import ManageServiceCard from "./ManageServiceCard";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const ManageService = () => {
   const { user } = useContext(AuthContext);
@@ -14,6 +15,9 @@ const ManageService = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>SFC | Manage Service</title>
+      </Helmet>
       <h1 className="text-4xl font-kalam my-10">Update Service</h1>
       {
         myCurrentServices.length>0? 

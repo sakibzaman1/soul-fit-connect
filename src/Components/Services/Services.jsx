@@ -2,6 +2,7 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 import SingleService from "./SingleService";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const Services = () => {
   const services = useLoaderData();
@@ -20,6 +21,9 @@ const Services = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>SFC | Services</title>
+      </Helmet>
       <h1 className="text-4xl font-kalam my-10">Our Services</h1>
      <div className="my-10">
      <input

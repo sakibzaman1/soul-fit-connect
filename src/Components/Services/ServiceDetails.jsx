@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import BookNow from "../Modals/BookNow";
+import { Helmet } from "react-helmet-async";
 
 const ServiceDetails = () => {
 
@@ -23,6 +24,9 @@ const ServiceDetails = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>SFC | Service Details</title>
+      </Helmet>
       <div className="mt-10 w-full bg-slate-200 border border-gray-200 rounded-lg  dark:bg-gray-800 dark:border-gray-700 space-y-6 p-6 shadow-xl">
         <a href="#">
           <img

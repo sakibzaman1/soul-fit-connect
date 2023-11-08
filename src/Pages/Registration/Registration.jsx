@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { BiLowVision, BiShowAlt } from "react-icons/bi";
+import { Helmet } from "react-helmet-async";
 
 const Registration = () => {
 
@@ -99,6 +100,9 @@ const Registration = () => {
 
   return (
     <div className="lg:flex items-center my-14 lg:gap-28">
+      <Helmet>
+        <title>SFC | Registration</title>
+      </Helmet>
       <div className="text-center lg:text-right lg:w-1/2">
         <h1 className="text-5xl font-bold text-center">Register Now!</h1>
         <p className="py-6 text-center">
@@ -119,7 +123,7 @@ const Registration = () => {
               name="name"
               id="name2"
               type="text"
-              placeholder="name@flowbite.com"
+              placeholder="your name"
               required
               shadow
             />
@@ -132,7 +136,7 @@ const Registration = () => {
               name="email"
               id="email2"
               type="email"
-              placeholder="name@flowbite.com"
+              placeholder="your email"
               required
               shadow
             />
@@ -145,6 +149,7 @@ const Registration = () => {
               name="photo"
               id="photo-url"
               type="text"
+              placeholder="photo url"
               required
               shadow
             />
@@ -158,6 +163,7 @@ const Registration = () => {
           className="w-full"
               name="password"
               id="password2"
+              placeholder="password"
               type={showPassword ? "text" : "password"}
               required
               shadow

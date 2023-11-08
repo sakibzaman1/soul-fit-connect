@@ -9,6 +9,9 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import AppDownload from "../../Components/ExtraSections/AppDownload";
 import Stats from "../../Components/ExtraSections/Stats";
 import Location from "../../Components/ExtraSections/Location";
+import { Helmet } from "react-helmet-async";
+import { motion } from "framer-motion";
+
 
 const Home = () => {
 
@@ -19,6 +22,9 @@ const Home = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Soul Fit Connect | HOME</title>
+      </Helmet>
       <div className="relative mt-10">
         <div className="mt-10 hidden lg:flex items-center h-10 absolute top-20 right-6 left-0 vertical-marquee ">
           <Marquee className="text-[300px] mt-8 ml-6 text-white">
@@ -57,14 +63,14 @@ const Home = () => {
         </div>
         <div>
           <h1 className="text-4xl font-kalam my-10">Popular Services</h1>
-          <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 space-y-4 lg:space-y-0">
           {
             services?.slice(0,4).map(service=> <SingleService key={service._id} service={service}></SingleService>)
           }
           </div>
           <div className="my-14 bg-teal-600 p-2 text-white w-56 flex justify-center mx-auto">
             <NavLink to="/services">
-              <button onClick={goToTop}>Show All Services</button>
+              <motion.button whileHover={{ scale: 1.2 }} onClick={goToTop}>Show All Services</motion.button>
             </NavLink>
           </div>
         </div>

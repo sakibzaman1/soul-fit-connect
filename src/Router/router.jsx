@@ -14,6 +14,8 @@ import ErrorPage from '../Components/ErrorPage/ErrorPage';
 import ManageService from '../Pages/ManageService/ManageService';
 import UpdateService from '../Pages/ManageService/UpdateService';
 import Location from '../Components/ExtraSections/Location';
+import About from '../Pages/About/About';
+import Contact from '../Pages/Contact/Contact';
 
 const router = createBrowserRouter([
     {
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
                 loader: ()=> fetch(`https://soul-fit-connect-server.vercel.app/services`)
+            },
+            {
+                path: '/about',
+                element: <About></About>
+            },
+            {
+                path: '/contact',
+                element: <Contact></Contact>
             },
             {
                 path: '/login',

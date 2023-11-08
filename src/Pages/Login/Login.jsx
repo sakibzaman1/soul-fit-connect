@@ -5,6 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../Providers/AuthProvider";
 import swal from "sweetalert";
 import { BiLowVision, BiShowAlt } from "react-icons/bi";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -65,6 +66,9 @@ const Login = () => {
 
   return (
     <div className="flex items-center my-16">
+      <Helmet>
+        <title>SFC | Login</title>
+      </Helmet>
       <div className="w-1/2">
         <form onSubmit={handleLogin} className="flex max-w-md flex-col gap-4">
           <div>
@@ -75,7 +79,7 @@ const Login = () => {
               name="email"
               id="email1"
               type="email"
-              placeholder="name@flowbite.com"
+              placeholder="your name"
               required
             />
           </div>
@@ -88,6 +92,7 @@ const Login = () => {
               className="w-full"
                 name="password"
                 id="password1"
+                placeholder="password"
                 type={showPassword ? "text" : "password"}
                 required
               />

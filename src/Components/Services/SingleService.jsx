@@ -2,10 +2,10 @@ import React from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { motion } from "framer-motion";
 
 const SingleService = ({ service }) => {
-
-  const {goToTop} = useContext(AuthContext);
+  const { goToTop } = useContext(AuthContext);
 
   const {
     _id,
@@ -20,9 +20,12 @@ const SingleService = ({ service }) => {
   } = service;
 
   return (
-    <div>
-      <div className="w-full bg-slate-200 border border-gray-200 rounded-lg  dark:bg-gray-800 dark:border-gray-700 space-y-6 p-6 shadow-xl">
-        <a href="#">
+    <motion.div
+      className="cursor-pointer"
+      whileHover={{ scale: 0.9 }}
+    >
+      <div className="w-full bg-slate-200 border border-gray-200 rounded-lg  dark:bg-gray-800 dark:border-gray-700 space-y-6 lg:p-6 shadow-xl">
+        <a>
           <img
             className="p-8 rounded-t-lg h-[500px] w-full"
             src={serviceImage}
@@ -117,16 +120,16 @@ const SingleService = ({ service }) => {
               <span className="text-red-600">{price}</span>
             </span>
             <Link
-             onClick={goToTop}
+              onClick={goToTop}
               to={`/servicedetails/${_id}`}
-              className="text-white bg-gradient-to-r from-teal-200 to-teal-700  hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-none text-sm px-5 py-2.5 text-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800"
+              className="text-white bg-gradient-to-r from-teal-400 to-teal-700  hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-none text-sm px-5 py-2.5 text-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800"
             >
               View Details
             </Link>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
