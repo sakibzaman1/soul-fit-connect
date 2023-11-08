@@ -43,7 +43,7 @@ const ManageServiceCard = ({
   return (
     <div>
       <div className="w-full bg-slate-200 border border-gray-200 rounded-lg  dark:bg-gray-800 dark:border-gray-700 space-y-6 p-6 shadow-xl">
-        <a href="#">
+        <a>
           <img
             className="p-8 rounded-t-lg h-96 w-full"
             src={serviceImage}
@@ -56,13 +56,13 @@ const ManageServiceCard = ({
               {serviceName}
             </h5>
           </a>
-          <div>
+          <div className="h-[120px]">
             <p className="mb-10">{description}</p>
           </div>
           <div className="my-6">
             <span>Service Area : {serviceArea}</span>
           </div>
-          <div className="flex items-center justify-center space-x-10 mb-6">
+          <div className="flex items-center justify-center space-x-10 mb-6 flex-grow">
             <h1 className="text-lg font-semibold font-kalam">
               Service Provider ~{" "}
             </h1>

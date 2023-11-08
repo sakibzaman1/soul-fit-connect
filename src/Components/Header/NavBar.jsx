@@ -18,7 +18,7 @@ const NavBar = () => {
   return (
     <div>
       <Navbar className="bg-slate-200" fluid rounded>
-        <Navbar.Brand className="mb-4 space-x-20 lg:space-x-0 lg:mb-0" href="https://flowbite-react.com">
+        <Navbar.Brand className="mb-4 space-x-20 lg:space-x-0 lg:mb-0" href="/">
           <img
             src="https://i.ibb.co/cXFNP7Z/Soul-Fit-Connect-horizontal-logo-removebg-preview.png"
             className="lg:mr-3 lg:h-6 lg:w-10 h-28 sm:h-9 w-20"
@@ -62,7 +62,9 @@ const NavBar = () => {
                 ""
               )}
             </Dropdown.Header>
-            {user ? <Dropdown.Item>My Services</Dropdown.Item> : ""}
+            {user ? <Dropdown.Item>
+              <Link to="/myservices">My Services</Link>
+            </Dropdown.Item> : ""}
             {user ? (
               <Dropdown.Item>
                 <Link to="/addservices">Add Services</Link>

@@ -16,6 +16,7 @@ import UpdateService from '../Pages/ManageService/UpdateService';
 import Location from '../Components/ExtraSections/Location';
 import About from '../Pages/About/About';
 import Contact from '../Pages/Contact/Contact';
+import MyServices from '../Pages/MyServices/MyServices';
 
 const router = createBrowserRouter([
     {
@@ -53,6 +54,11 @@ const router = createBrowserRouter([
                 path: '/servicedetails/:id',
                 element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
                 loader: ({params})=> fetch(`https://soul-fit-connect-server.vercel.app/services/${params.id}`)
+            },
+            {
+                path: '/myservices',
+                element: <PrivateRoute><MyServices></MyServices></PrivateRoute>,
+                loader: ()=> fetch(`https://soul-fit-connect-server.vercel.app/services`)
             },
             {
                 path: '/addservices',

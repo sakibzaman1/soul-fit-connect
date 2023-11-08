@@ -22,7 +22,7 @@ const ManageService = () => {
       {
         myCurrentServices.length>0? 
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 space-y-6 lg:space-y-0 lg:gap-4">
         {myCurrentServices.map((service) => (
           <ManageServiceCard
             key={service._id}
