@@ -8,6 +8,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import AppDownload from "../../Components/ExtraSections/AppDownload";
 import Stats from "../../Components/ExtraSections/Stats";
+import Location from "../../Components/ExtraSections/Location";
 
 const Home = () => {
 
@@ -19,7 +20,7 @@ const Home = () => {
   return (
     <div>
       <div className="relative mt-10">
-        <div className="mt-10 flex items-center h-10 absolute top-20 right-6 left-0 vertical-marquee">
+        <div className="mt-10 hidden lg:flex items-center h-10 absolute top-20 right-6 left-0 vertical-marquee ">
           <Marquee className="text-[300px] mt-8 ml-6 text-white">
             <p className="pl-4 border-r-2">
               "Fitness is not about being better than someone else; it's about
@@ -55,8 +56,8 @@ const Home = () => {
           <Video></Video>
         </div>
         <div>
-          <h1 className="text-4xl font-kalam my-10">Our Services</h1>
-          <div className="grid grid-cols-2 gap-6">
+          <h1 className="text-4xl font-kalam my-10">Popular Services</h1>
+          <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6">
           {
             services?.slice(0,4).map(service=> <SingleService key={service._id} service={service}></SingleService>)
           }

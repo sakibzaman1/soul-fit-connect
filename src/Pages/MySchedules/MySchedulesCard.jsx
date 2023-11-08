@@ -21,7 +21,7 @@ const MySchedulesCard = ({ myBooking }) => {
       <div className="w-full bg-slate-200 border border-gray-200 rounded-lg  dark:bg-gray-800 dark:border-gray-700 space-y-6 p-6 shadow-xl">
         <a href="#">
           <img
-            className="p-8 rounded-t-lg"
+            className="p-8 rounded-t-lg h-96 w-full"
             src={serviceImage}
             alt="product image"
           />

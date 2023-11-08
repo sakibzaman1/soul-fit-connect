@@ -24,7 +24,7 @@ const ManageServiceCard = ({
 
   const handleDeleteService = (_id) => {
     // console.log(_id)
-    fetch(`http://localhost:5000/services/${_id}`, {
+    fetch(`https://soul-fit-connect-server.vercel.app/services/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -45,7 +45,7 @@ const ManageServiceCard = ({
       <div className="w-full bg-slate-200 border border-gray-200 rounded-lg  dark:bg-gray-800 dark:border-gray-700 space-y-6 p-6 shadow-xl">
         <a href="#">
           <img
-            className="p-8 rounded-t-lg"
+            className="p-8 rounded-t-lg h-96 w-full"
             src={serviceImage}
             alt="product image"
           />
@@ -82,7 +82,7 @@ const ManageServiceCard = ({
               </p>
             </div>
           </div>
-          <div className="flex items-center justify-center mt-2.5 mb-10">
+          <div className="flex items-center justify-center mt-2.5 mb-10 flex-grow">
             <svg
               className="w-4 h-4 text-yellow-300 mr-1"
               aria-hidden="true"

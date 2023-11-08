@@ -66,7 +66,7 @@ const ServiceDetails = () => {
               <p>Location: {providerLocation}</p>
             </div>
           </div>
-          <div className="flex items-center justify-center mt-2.5 mb-10">
+          <div className="flex items-center justify-center mt-2.5 mb-10 flex-grow">
             <svg
               className="w-4 h-4 text-yellow-300 mr-1"
               aria-hidden="true"

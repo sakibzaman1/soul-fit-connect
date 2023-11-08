@@ -41,7 +41,7 @@ const UpdateService = () => {
         const UpdatedService = {serviceName, serviceImage, price, proName, proImage, proEmail,providerLocation, serviceArea, description};
         console.log(UpdatedService);
 
-        fetch(`http://localhost:5000/services/${_id}`,{
+        fetch(`https://soul-fit-connect-server.vercel.app/services/${_id}`,{
             method: 'PUT',
             headers: {
                 'content-type':'application/json'

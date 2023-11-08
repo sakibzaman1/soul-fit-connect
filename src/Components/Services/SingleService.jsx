@@ -24,7 +24,7 @@ const SingleService = ({ service }) => {
       <div className="w-full bg-slate-200 border border-gray-200 rounded-lg  dark:bg-gray-800 dark:border-gray-700 space-y-6 p-6 shadow-xl">
         <a href="#">
           <img
-            className="p-8 rounded-t-lg"
+            className="p-8 rounded-t-lg h-[500px] w-full"
             src={serviceImage}
             alt="product image"
           />
@@ -35,13 +35,13 @@ const SingleService = ({ service }) => {
               {serviceName}
             </h5>
           </a>
-          <div>
+          <div className="flex flex-grow h-[120px]">
             <p className="mb-10">{description}</p>
           </div>
           <div className="my-6">
             <span>Service Area : {serviceArea}</span>
           </div>
-          <div className="flex items-center justify-center space-x-10 mb-6">
+          <div className="flex items-center justify-center space-x-10 mb-6 flex-grow">
             <h1 className="text-lg font-semibold font-kalam">
               Service Provider ~{" "}
             </h1>
@@ -61,7 +61,7 @@ const SingleService = ({ service }) => {
               </p>
             </div>
           </div>
-          <div className="flex items-center justify-center mt-2.5 mb-10">
+          <div className="flex items-center justify-center mt-2.5 mb-10 flex-grow">
             <svg
               className="w-4 h-4 text-yellow-300 mr-1"
               aria-hidden="true"

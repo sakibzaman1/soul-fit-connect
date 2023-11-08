@@ -32,7 +32,7 @@ const NavBar = () => {
         }
         <BsArrowDownRight></BsArrowDownRight>
         <Dropdown
-          arrowIcon={false}
+          arrowIcon={true}
           inline
           label={
             <Avatar alt="User settings" img={user? user.photoURL : defaultUser} rounded />
@@ -46,13 +46,14 @@ const NavBar = () => {
           {user? <Dropdown.Item><Link to="/addservices">Add Services</Link></Dropdown.Item> : ''}
           {user? <Dropdown.Item><Link to="/manageservice">Manage Service</Link></Dropdown.Item> : ''}
           {user? <Dropdown.Item><Link to="/myschedules">My Schedules</Link></Dropdown.Item> : ''}
+          {user? <Dropdown.Item><Link to="/location">Service Areas</Link></Dropdown.Item> : ''}
           <Dropdown.Divider />
           {user? <Dropdown.Item onClick={handleLogOut}>Logout</Dropdown.Item> : ''}
         </Dropdown>
         <Navbar.Toggle />
       </div>
-      <div>
-       <ul  className='text-lg gap-14 flex'>
+      <div className=''>
+       <ul  className='text-lg gap-14 hidden lg:flex '>
         <li className='navLinks'><NavLink to='/'>Home</NavLink></li>
         <li className='navLinks'><NavLink to='/services'>Services</NavLink></li>
         <li className='navLinks'><NavLink to='about'>About</NavLink></li>

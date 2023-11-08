@@ -13,6 +13,7 @@ import PrivateRoute from '../PrivateRoutes/PrivateRoute';
 import ErrorPage from '../Components/ErrorPage/ErrorPage';
 import ManageService from '../Pages/ManageService/ManageService';
 import UpdateService from '../Pages/ManageService/UpdateService';
+import Location from '../Components/ExtraSections/Location';
 
 const router = createBrowserRouter([
     {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: ()=> fetch(`http://localhost:5000/services`)
+                loader: ()=> fetch(`https://soul-fit-connect-server.vercel.app/services`)
             },
             {
                 path: '/login',
@@ -36,12 +37,12 @@ const router = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services></Services>,
-                loader: ()=> fetch(`http://localhost:5000/services`)
+                loader: ()=> fetch(`https://soul-fit-connect-server.vercel.app/services`)
             },
             {
                 path: '/servicedetails/:id',
                 element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({params})=> fetch(`https://soul-fit-connect-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/addservices',
@@ -50,17 +51,21 @@ const router = createBrowserRouter([
             {
                 path: '/manageservice',
                 element: <PrivateRoute><ManageService></ManageService></PrivateRoute>,
-                loader: ()=> fetch(`http://localhost:5000/services`)
+                loader: ()=> fetch(`https://soul-fit-connect-server.vercel.app/services`)
+            },
+            {
+                path: '/location',
+                element: <PrivateRoute><Location></Location></PrivateRoute>
             },
             {
                 path: '/updateservice/:id',
                 element: <PrivateRoute><UpdateService></UpdateService></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({params})=> fetch(`https://soul-fit-connect-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/myschedules',
                 element: <PrivateRoute><MySchedules></MySchedules></PrivateRoute>,
-                loader: ()=> fetch(`http://localhost:5000/myschedules`)
+                loader: ()=> fetch(`https://soul-fit-connect-server.vercel.app/myschedules`)
             }
         ]
     }

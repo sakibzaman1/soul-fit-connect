@@ -24,7 +24,7 @@ const AddServices = () => {
         console.log(newService);
          // send data to the server
 
-         fetch('http://localhost:5000/services', {
+         fetch('https://soul-fit-connect-server.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'
@@ -109,4 +109,8 @@ https://i.ibb.co/zf0dSFr/personal-training.jpg
 https://i.ibb.co/Q8mXJ97/workout-plans.jpg
 https://i.ibb.co/zSQyysB/Group-Fitness-Classes.jpg
 https://i.ibb.co/WpZ8d68/Nutritional-Guidance.jpg
+https://i.ibb.co/TqZHxYj/community-support.jpg
+https://i.ibb.co/djRfKFC/fitness-challenge.jpg
+https://i.ibb.co/Ky0gwpN/mobile-app.jpg
+https://i.ibb.co/HFjKS7S/online-workshop.jpg
 */

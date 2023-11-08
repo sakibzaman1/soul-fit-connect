@@ -45,7 +45,7 @@ const BookNow = ({ service }) => {
         proEmail,
         serviceDate}
 
-      fetch('http://localhost:5000/myschedules', {
+      fetch('https://soul-fit-connect-server.vercel.app/myschedules', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

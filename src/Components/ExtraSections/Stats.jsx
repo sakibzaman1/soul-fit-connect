@@ -29,15 +29,15 @@ const Stats = () => {
             <dl className="grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-gray-900 sm:grid-cols-3 xl:grid-cols-6 dark:text-white sm:p-8">
                 <div className="flex flex-col items-center justify-center">
                     <dt className="mb-2 text-3xl font-extrabold">73M+</dt>
-                    <dd className="text-gray-500 dark:text-gray-400">Developers</dd>
+                    <dd className="text-gray-500 dark:text-gray-400">Page Views</dd>
                 </div>
                 <div className="flex flex-col items-center justify-center">
                     <dt className="mb-2 text-3xl font-extrabold">100M+</dt>
-                    <dd className="text-gray-500 dark:text-gray-400">Public repositories</dd>
+                    <dd className="text-gray-500 dark:text-gray-400">Page Traffic</dd>
                 </div>
                 <div className="flex flex-col items-center justify-center">
                     <dt className="mb-2 text-3xl font-extrabold">1000s</dt>
-                    <dd className="text-gray-500 dark:text-gray-400">Open source projects</dd>
+                    <dd className="text-gray-500 dark:text-gray-400">Current Users</dd>
                 </div>
                 <div className="flex flex-col items-center justify-center">
                     <dt className="mb-2 text-3xl font-extrabold">1B+</dt>
@@ -45,11 +45,11 @@ const Stats = () => {
                 </div>
                 <div className="flex flex-col items-center justify-center">
                     <dt className="mb-2 text-3xl font-extrabold">90+</dt>
-                    <dd className="text-gray-500 dark:text-gray-400">Top Forbes companies</dd>
+                    <dd className="text-gray-500 dark:text-gray-400">Top Organizations</dd>
                 </div>
                 <div className="flex flex-col items-center justify-center">
                     <dt className="mb-2 text-3xl font-extrabold">4M+</dt>
-                    <dd className="text-gray-500 dark:text-gray-400">Organizations</dd>
+                    <dd className="text-gray-500 dark:text-gray-400">Likes</dd>
                 </div>
             </dl>
         </div>
@@ -61,25 +61,25 @@ const Stats = () => {
                     <svg className="flex-shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
                     </svg>
-                    <span className="leading-tight">Dynamic reports and dashboards</span>
+                    <span className="leading-tight">Group Fitness Classes</span>
                 </li>
                 <li className="flex space-x-2 items-center">
                     <svg className="flex-shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
                     </svg>
-                    <span className="leading-tight">Templates for everyone</span>
+                    <span className="leading-tight">Personal Training</span>
                 </li>
                 <li className="flex space-x-2 items-center">
                     <svg className="flex-shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
                     </svg>
-                    <span className="leading-tight">Development workflow</span>
+                    <span className="leading-tight">Nutrition Counseling</span>
                 </li>
                 <li className="flex space-x-2 items-center">
                     <svg className="flex-shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
                     </svg>
-                    <span className="leading-tight">Limitless business automation</span>
+                    <span className="leading-tight">Fitness Facilities and Equipment</span>
                 </li>
             </ul>
         </div>
@@ -88,7 +88,7 @@ const Stats = () => {
             <div id="accordion-flush" data-accordion="collapse" data-active-classNamees="bg-white dark:bg-gray-900 text-gray-900 dark:text-white" data-inactive-classNamees="text-gray-500 dark:text-gray-400">
                 <h2 id="accordion-flush-heading-1">
                     <button type="button" className="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
-                    <span>What is Flowbite?</span>
+                    <span>What is Soul Fit Connect?</span>
                     <svg data-accordion-icon className="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
                     </svg>
@@ -102,7 +102,7 @@ const Stats = () => {
                 </div>
                 <h2 id="accordion-flush-heading-2">
                     <button type="button" className="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2">
-                    <span>Is there a Figma file available?</span>
+                    <span>Is there any online service available?</span>
                     <svg data-accordion-icon className="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
                     </svg>
@@ -116,7 +116,7 @@ const Stats = () => {
                 </div>
                 <h2 id="accordion-flush-heading-3">
                     <button type="button" className="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3">
-                    <span>What are the differences between Flowbite and Tailwind UI?</span>
+                    <span>What are the differences between Soul Fit Connect and others?</span>
                     <svg data-accordion-icon className="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
                     </svg>
