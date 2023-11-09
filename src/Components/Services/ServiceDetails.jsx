@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import BookNow from "../Modals/BookNow";
 import { Helmet } from "react-helmet-async";
 import SingleService from "./SingleService";
-import { motion } from "framer-motion";
+
 
 const ServiceDetails = () => {
   const [otherServices, setOtherServices] = useState([]);
@@ -45,7 +45,7 @@ const ServiceDetails = () => {
         Service details of -{" "}
         <span className="font-josefinSans text-teal-600">{serviceName}</span>
       </h1>
-      <motion.div
+      <div
         animate={{ scale: 0.95 }}
         transition={{ ease: "easeOut", duration: 2 }}
         className="mt-10 w-full bg-slate-200 border border-gray-200 rounded-lg  dark:bg-gray-800 dark:border-gray-700 space-y-6 p-6 shadow-xl"
@@ -153,7 +153,7 @@ const ServiceDetails = () => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
       <hr className="my-20 border-2" />
       {/* All other services */}
       <div>
