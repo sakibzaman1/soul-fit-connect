@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./booknow.css";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { motion } from "framer-motion";
 
 const BookNow = ({ service }) => {
   const {
@@ -18,54 +19,58 @@ const BookNow = ({ service }) => {
   const handleBooking = (e) => {
     e.preventDefault();
     const form = e.target;
-    const serviceName =form.serviceName.value;
-    const serviceImage =form.serviceImage.value;
-    const price =form.price.value;
-    const serviceArea =form.serviceArea.value;
+    const serviceName = form.serviceName.value;
+    const serviceImage = form.serviceImage.value;
+    const price = form.price.value;
+    const serviceArea = form.serviceArea.value;
     const userEmail = user?.email;
-    const proImage =form.proImage.value;
-    const proEmail =form.proEmail.value;
+    const proImage = form.proImage.value;
+    const proEmail = form.proEmail.value;
     const serviceDate = form.serviceDate.value;
 
-    console.log(serviceName,
+    console.log(
+      serviceName,
       serviceImage,
       price,
       serviceArea,
       userEmail,
       proImage,
       proEmail,
-      serviceDate);
+      serviceDate
+    );
 
-      const myNewService = {serviceName,
-        serviceImage,
-        price,
-        serviceArea,
-        userEmail,
-        proImage,
-        proEmail,
-        serviceDate}
+    const myNewService = {
+      serviceName,
+      serviceImage,
+      price,
+      serviceArea,
+      userEmail,
+      proImage,
+      proEmail,
+      serviceDate,
+    };
 
-      fetch('https://soul-fit-connect-server.vercel.app/myschedules', {
-            method: 'POST',
-            headers: {
-                'content-type' : 'application/json'
-            },
-            body: JSON.stringify(myNewService)
-        })
-        .then(res=> res.json())
-        .then(data=> {
-            console.log(data);
-            if(data.insertedId){
-                swal({
-                    position: 'top-center',
-                    icon: 'success',
-                    title: 'Service Added Successfully',
-                    showConfirmButton: false,
-                    showCancelButton: false,
-                    timer: 2000
-                });
-            }
-        })
+    fetch("https://soul-fit-connect-server.vercel.app/myschedules", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(myNewService),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          swal({
+            position: "top-center",
+            icon: "success",
+            title: "Service Added Successfully",
+            showConfirmButton: false,
+            showCancelButton: false,
+            timer: 2000,
+          });
+        }
+      });
   };
 
   const toggleModal = () => {
@@ -97,10 +102,7 @@ const BookNow = ({ service }) => {
             <form onSubmit={handleBooking}>
               <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
                 <div className="sm:col-span-2">
-                  <label
-                    
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
+                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     Service Name
                   </label>
                   <input
@@ -115,10 +117,7 @@ const BookNow = ({ service }) => {
                   />
                 </div>
                 <div className="w-full">
-                  <label
-                    
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
+                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     Service Image URL
                   </label>
                   <input
@@ -133,10 +132,7 @@ const BookNow = ({ service }) => {
                   />
                 </div>
                 <div className="w-full">
-                  <label
-                    
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
+                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     Service Price
                   </label>
                   <input
@@ -151,10 +147,7 @@ const BookNow = ({ service }) => {
                   />
                 </div>
                 <div>
-                  <label
-                    
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
+                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     User's Email
                   </label>
                   <input
@@ -168,10 +161,7 @@ const BookNow = ({ service }) => {
                   ></input>
                 </div>
                 <div>
-                  <label
-                    
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
+                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     Provider's Email
                   </label>
                   <input
@@ -186,10 +176,7 @@ const BookNow = ({ service }) => {
                   />
                 </div>
                 <div className="w-full">
-                  <label
-                    
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
+                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     Provider's Image URL
                   </label>
                   <input
@@ -204,10 +191,7 @@ const BookNow = ({ service }) => {
                   />
                 </div>
                 <div className="w-full">
-                  <label
-                    
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
+                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     Service Area
                   </label>
                   <input
@@ -221,10 +205,7 @@ const BookNow = ({ service }) => {
                   />
                 </div>
                 <div className="sm:col-span-2">
-                  <label
-                    
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
+                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     Service Taking date
                   </label>
                   <input

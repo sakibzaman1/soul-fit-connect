@@ -65,11 +65,11 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center my-16">
+    <div className="lg:flex items-center my-16">
       <Helmet>
         <title>SFC | Login</title>
       </Helmet>
-      <div className="w-1/2">
+      <div className="lg:w-1/2">
         <form onSubmit={handleLogin} className="flex max-w-md flex-col gap-4">
           <div>
             <div className="mb-2 block">
@@ -150,7 +150,7 @@ const Login = () => {
           </div>
         </form>
       </div>
-      <div className="text-center w-1/2">
+      <div className="text-center lg:w-1/2">
         <h1 className="text-3xl font-bold">Login Now</h1>
         <p className="py-6">
           Welcome back! We`re delighted to see you again. Sign in to your

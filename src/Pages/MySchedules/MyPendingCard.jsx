@@ -119,7 +119,7 @@ const MyPendingCard = ({ myPendingWork }) => {
               <span className="text-red-600">{price}</span>
             </span>
             <div>
-              <DropDown></DropDown>
+              <DropDown id={_id}></DropDown>
             </div>
           </div>
         </div>

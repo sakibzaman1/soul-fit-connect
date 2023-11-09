@@ -8,9 +8,9 @@ import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import AppDownload from "../../Components/ExtraSections/AppDownload";
 import Stats from "../../Components/ExtraSections/Stats";
-import Location from "../../Components/ExtraSections/Location";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
+import Contact from "../Contact/Contact";
 
 
 const Home = () => {
@@ -81,11 +81,14 @@ const Home = () => {
         <Header></Header>
       </div>
       <div>
-        <h1 className="text-4xl font-kalam my-20">More About Us</h1>
+        <h1 className="text-4xl font-kalam my-10">More About Us</h1>
         <Stats></Stats>
       </div>
       <div>
-        <h1 className="text-4xl font-kalam my-10">Connect Faster</h1>
+        <h1 className="text-4xl font-kalam my-10">Connect With Us</h1>
+        <Contact></Contact>
+      </div>
+      <div>
         <AppDownload></AppDownload>
       </div>
     </div>

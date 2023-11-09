@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import BookNow from "../Modals/BookNow";
 import { Helmet } from "react-helmet-async";
+import SingleService from "./SingleService";
+import { motion } from "framer-motion";
 
 const ServiceDetails = () => {
-
-
+  const [otherServices, setOtherServices] = useState([]);
   const service = useLoaderData();
-//   console.log(service);
+  //   console.log(service);
 
   const {
     _id,
@@ -22,13 +23,34 @@ const ServiceDetails = () => {
     description,
   } = service;
 
+  useEffect(() => {
+    fetch(`https://soul-fit-connect-server.vercel.app/services`)
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        const filteredServices = data.filter((service) => service._id !== _id);
+        // console.log(filteredServices)
+        setOtherServices(filteredServices);
+      });
+  }, []);
+
+  // console.log(otherServices)
+
   return (
     <div>
       <Helmet>
         <title>SFC | Service Details</title>
       </Helmet>
-      <div className="mt-10 w-full bg-slate-200 border border-gray-200 rounded-lg  dark:bg-gray-800 dark:border-gray-700 space-y-6 p-6 shadow-xl">
-        <a href="#">
+      <h1 className="text-4xl font-kalam my-10">
+        Service details of -{" "}
+        <span className="font-josefinSans text-teal-600">{serviceName}</span>
+      </h1>
+      <motion.div
+        animate={{ scale: 0.95 }}
+        transition={{ ease: "easeOut", duration: 2 }}
+        className="mt-10 w-full bg-slate-200 border border-gray-200 rounded-lg  dark:bg-gray-800 dark:border-gray-700 space-y-6 p-6 shadow-xl"
+      >
+        <a>
           <img
             className="p-8 rounded-t-lg"
             src={serviceImage}
@@ -125,13 +147,21 @@ const ServiceDetails = () => {
               <span className="font-kalam">Price</span> : ${" "}
               <span className="text-red-600">{price}</span>
             </span>
-           
-              <div>
+
+            <div>
               <BookNow service={service}></BookNow>
-              </div>
-              
-            
+            </div>
           </div>
+        </div>
+      </motion.div>
+      <hr className="my-20 border-2" />
+      {/* All other services */}
+      <div>
+        <h1 className="text-4xl font-kalam my-10">Other Services</h1>
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 space-y-4 lg:space-y-0">
+          {otherServices.map((service) => (
+            <SingleService key={service._id} service={service}></SingleService>
+          ))}
         </div>
       </div>
     </div>
