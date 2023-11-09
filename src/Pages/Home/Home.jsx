@@ -10,7 +10,8 @@ import AppDownload from "../../Components/ExtraSections/AppDownload";
 import Stats from "../../Components/ExtraSections/Stats";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import Contact from "../Contact/Contact";
+
+import Messege from "../../Components/ExtraSections/Messege";
 
 
 const Home = () => {
@@ -86,7 +87,7 @@ const Home = () => {
       </div>
       <div>
         <h1 className="text-4xl font-kalam my-10">Connect With Us</h1>
-        <Contact></Contact>
+        <Messege></Messege>
       </div>
       <div>
         <AppDownload></AppDownload>
