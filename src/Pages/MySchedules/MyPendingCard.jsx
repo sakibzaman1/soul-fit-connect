@@ -16,7 +16,7 @@ const MyPendingCard = ({ myPendingWork }) => {
     serviceDate,
   } = myPendingWork;
 
-  console.log(_id);
+  // console.log(_id);
 
   return (
     <div>

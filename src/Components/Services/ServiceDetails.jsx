@@ -46,8 +46,6 @@ const ServiceDetails = () => {
         <span className="font-josefinSans text-teal-600">{serviceName}</span>
       </h1>
       <div
-        animate={{ scale: 0.95 }}
-        transition={{ ease: "easeOut", duration: 2 }}
         className="mt-10 w-full bg-slate-200 border border-gray-200 rounded-lg  dark:bg-gray-800 dark:border-gray-700 space-y-6 p-6 shadow-xl"
       >
         <a>
